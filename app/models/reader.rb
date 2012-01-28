@@ -1,6 +1,9 @@
 class Reader < ActiveRecord::Base
-	validates :email, :presence => true
-	validates :password, :presence => true
+	validates :email, :uniqueness => true, 
+						:length => { :within => 8...256 },
+						:format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
+
+	validates :password, :presence => true, :confirmation => true
 
 	has_many :books, :dependent => :nullify
 
