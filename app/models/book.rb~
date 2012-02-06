@@ -15,7 +15,7 @@ class Book < ActiveRecord::Base
 
 	has_many :comments
 
-	def publiched?
+	def published?
 		publication_date.present?
 	end	
 	

@@ -6,7 +6,6 @@
     <th>Title</th>
     <th>Publication date</th>
     <th>Description</th>
-    <th>Owner</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,12 +17,9 @@
     <td><%= book.title %></td>
     <td><%= book.publication_date %></td>
     <td><%= book.description %></td>
-    <td><%= book.owner %></td>
     <td><%= link_to 'Show', book %></td>
     <td><%= link_to 'Edit', edit_book_path(book) %></td>
     <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
-	<% @item=book.description %>
-	<td><%=link_to 'Edit_item', book %></td>
   </tr>
 <% end %>
 </table>

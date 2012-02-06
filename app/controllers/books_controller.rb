@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  @item=:description
   # GET /books
   # GET /books.xml
   def index
@@ -7,7 +6,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-#      format.xml  { render :xml => @books }
+      format.xml  { render :xml => @books }
     end
   end
 
@@ -36,16 +35,6 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
-    respond_to do |format|
-      format.html # edit.html.erb
-    end
-  end
-
-  def edit_item
-    @book = Book.find(params[:id])
-    respond_to do |format|
-      format.html # edit_item.html.erb
-    end
   end
 
   # POST /books

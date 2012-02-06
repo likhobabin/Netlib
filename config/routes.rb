@@ -1,7 +1,7 @@
 Netlib::Application.routes.draw do
-  resources :readers
-
   resources :books
+
+  resources :readers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
